@@ -1,0 +1,37 @@
+#!/bin/bash
+#written by Kate Grechishkina.
+#Upload 'dns' file  and 'dnses' folder into ~/scripts folder before using it. You can call it using an alias or by linking environmental PATH to scripts folder to .bashrc .
+
+TYPE=$1
+NUMBER=$2
+DOMAIN=$3
+
+RED="\033[0;31m"
+NC="\033[0m"
+BLUE="\033[1;34m"
+
+case $TYPE in
+	s)
+		echo -e "Please find the list of DNS records to add to ${RED}${DOMAIN}${NC}, which is hosted on ${RED}server${NUMBER}.web-hosting.com ${NC}: \n"
+		~/scripts/dnses/dns_s $NUMBER $DOMAIN
+		;;
+	p)
+		echo -e "Please find the list of DNS records to add to ${RED}${DOMAIN}${NC}, which is hosted on ${RED}premium${NUMBER}.web-hosting.com ${NC}: \n"
+		~/scripts/dnses/dns_p $NUMBER $DOMAIN
+		;;
+	b)
+        echo -e "Please find the list of DNS records to add to ${RED}${DOMAIN}${NC}, which is hosted on ${RED}business${NUMBER}.web-hosting.com ${NC}: \n"
+		~/scripts/dnses/dns_b $NUMBER $DOMAIN
+		;;
+	h)
+        echo -e "Please find the list of DNS records to add to ${RED}${DOMAIN}${NC}, which is hosted on ${RED}host${NUMBER}.registrar-servers.com ${NC}: \n"
+		~/scripts/dnses/dns_h $NUMBER $DOMAIN
+		;;
+	--help)
+		echo -e "${BBLUE}This script outputs the list of the most important DNS records in the DNS zone of a domain hosted on our shared servers.\n${NC}Use it in this format only:\ndns servertype servernumber domain.com\nfor example: dns h 24 domain.com\nthese servertypes can be used:\ns, p, b, h."
+		;;
+	*)
+		echo "One or sevaral of input parameters are incorrect please type 'dns --help' for more information"
+	exit 1 
+
+esac

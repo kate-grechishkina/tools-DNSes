@@ -1,0 +1,50 @@
+#!/bin/bash
+
+NUMBER=$1
+DOMAIN=$2
+SERVER=premium${NUMBER}.web-hosting.com
+
+#formating variables
+BLUE="\033[1;34m"
+GREEN="\033[1;34m"
+NC="\033[0m"
+
+function digging() {
+
+echo -e "${BLUE}This part of the records is for website to resolve from ${SERVER}${NC}"
+
+dig A ${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig CNAME www.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d' | uniq
+
+echo -e "${NEWLINE}${BLUE}These records are for additional services such as cpanel, ftp, webdisk, cpcalendars, cpcontacts.${NC}"
+
+dig cpanel.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig ftp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig webdisk.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig cpcalendars.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig cpcontacts.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig SRV _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig SRV _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig SRV _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig SRV _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig TXT _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig TXT _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig TXT _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig TXT _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+
+echo -e "${NEWLINE}${BLUE}This part is for email configuration, so you may not need to add it in case the clinet is not using cPanel email service.${NC}"
+
+dig MX ${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig mail.${DOMAIN} @${SERVER} +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig webmail.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig TXT ${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+
+echo -e "${NEWLINE}${GREEN}This part is for email configuration, but it is not obligatory to have it. These records are for automatic email clients configuration.${NC}"
+
+dig autodiscover.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig autoconfig.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+dig SRV _autodiscover._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+
+}
+
+digging
