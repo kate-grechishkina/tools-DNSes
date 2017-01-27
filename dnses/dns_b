@@ -8,7 +8,7 @@ SERVER=business${NUMBER}.web-hosting.com
 BLUE="\033[1;34m"
 GREEN="\033[1;34m"
 NC="\033[0m"
-NEWLINE=$'\n'
+NEWLINE='\n'
 
 function digging() {
 
@@ -22,16 +22,16 @@ echo -e "${NEWLINE}${BLUE}These records are for additional services such as cpan
 dig cpanel.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 dig ftp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 dig webdisk.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig cpcalendars.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig cpcontacts.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig SRV _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig SRV _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig SRV _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig SRV _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig TXT _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig TXT _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig TXT _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
-dig TXT _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig cpcalendars.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig cpcontacts.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig SRV _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig SRV _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig SRV _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig SRV _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig TXT _caldav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig TXT _caldavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig TXT _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
+#dig TXT _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 
 echo -e "${NEWLINE}${BLUE}This part is for email configuration, so you may not need to add it in case the clinet is not using cPanel email service.${NC}"
 

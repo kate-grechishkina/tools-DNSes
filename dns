@@ -31,7 +31,7 @@ case $TYPE in
 		echo -e "${BBLUE}This script outputs the list of the most important DNS records in the DNS zone of a domain hosted on our shared servers.\n${NC}Use it in this format only:\ndns servertype servernumber domain.com\nfor example: dns h 24 domain.com\nthese servertypes can be used:\ns, p, b, h."
 		;;
 	*)
-		echo "One or sevaral of input parameters are incorrect please type 'dns --help' for more information"
-	exit 1 
+		echo "One or sevaral of input parameters are incorrect. Type 'dns --help' for more information."
+		exit 1 
 
 esac
