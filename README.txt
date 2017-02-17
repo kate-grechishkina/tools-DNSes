@@ -1,7 +1,7 @@
-This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some of the shared servers.
+Description: This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some our shared servers.
 Author: Kate Grechishkina.
 
-The structure of the script is the following: 
+The structure of the script: 
 	- 1 main "switch" file called "dns" which purpose is to deternine what file will perform the actual "digging". It is neeeded to put this file in your 'scripts' folder created in the home direcotry of your account. 
 	- 4 files named dns_s , dns_p, dns_b and dns_h which contain the commands of "digging" itself. Those should be placed in 'scripts/dnses' folder located in home direcotry of your account.
 
