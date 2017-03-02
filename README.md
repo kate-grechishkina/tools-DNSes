@@ -1,4 +1,6 @@
-#DESCRIPTION: 
+#DNSes
+
+###DESCRIPTION:
 This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some our shared servers.
 
 ###INSTALLATION:
