@@ -24,7 +24,7 @@ cd ~; rm -rf tools-DNSes/
 ```
 - for new ncts01 server
 ```shell
-cd ~; rm -rf master.zip tools-DNSes/
+cd ~; rm -rf master.zip tools-DNSes-master/
 ```
 4) Start using.
 
