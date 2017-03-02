@@ -1,20 +1,30 @@
-Description: This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some our shared servers.
-Author: Kate Grechishkina.
+#DESCRIPTION: 
+This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some our shared servers.
 
-The structure of the script: 
-	- 1 main "switch" file called "dns" which purpose is to deternine what file will perform the actual "digging". It is neeeded to put this file in your 'scripts' folder created in the home direcotry of your account. 
-	- 4 files named dns_s , dns_p, dns_b and dns_h which contain the commands of "digging" itself. Those should be placed in 'scripts/dnses' folder located in home direcotry of your account.
+###INSTALLATION:
+1. Clone a repo from GitHub:
+```bash
+git clone https://github.com/kate-grechishkina/tools-DNSes.git; cd tools-DNSes
+```
+2. Execute the installation file:
+```bash
+sh install.sh
+```
+3. Navigate to your home directory and remove unnecessary file:
+```bash
+cd ~; rm -rf tools-DNSes/
+```
+4. Start using.
 
-More then detailed installation guide:
+###USAGE:
+Check the zone for domain on:
+- SHARED server: dns s servernum domain.com";
+- BUSINESS server: dns s servernum domain.com";
+- PREMIUM server: dns s servernum domain.com";
+- RESELLER server: dns s servernum domain.com";
 
-1) Connect to your account via SSH.
-2) Run "mkdir scripts | chmod 755 scripts" command.
-3) Run "cd scripts | mkdir dnses | chmod 755 dnses" command.
-3) Connect to your  account using FileZilla (22 port and sftp as connection protocol should be used), upload 'dns' file to newly-created "scripts" folder. Upload dns_s , dns_p, dns_b and dns_h files to "scripts/dnses" folder.
-4) Go back to the command line and cd to home directory using "cd ~" command after this we need to recursively change permissions on all files and folders inside scripts folder: "chmod -R -v 755 scripts" for this.
-5) Open .bashrc file of your profile. "nano .bashrc" will help you do it.
-6) Add the following two lines to this file a save it (Ctrl + X -> type "y" -> press Enter):
-PATH="~/scripts/:${PATH}"
-export PATH
-7) run "source .bashrc"
-8) type dns -h and it will output a short help information.
+###SCRIPT STRUCTURE:
+- 1 main "switch" file called "dns" which purpose is to deternine what file will perform the actual "digging". It is located in your 'scripts' folder created in the home directory of your account. 
+- 4 files named dns_s , dns_p, dns_b and dns_h which contain the commands of "digging" itself. Those are located in 'scripts/dnses' folder located in home direcotry of your account.
+
+###AUTHOR: Kate Grechishkina.
