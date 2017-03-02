@@ -26,8 +26,8 @@ sleep 1; echo "PATH variables added."
 sleep 1; echo "INSTALLATION FINISHED, ENJOY!"
 echo "=========================HOW-TO USE THIS SCRIPT==========================";
 echo "Check zone for domain on SHARED server: dns s servernumber domain.com";
-echo "Check zone for domain on BUSINESS server: dns s servernumber domain.com";
-echo "Check zone for domain on PREMIUM server: dns s servernumber domain.com";
-echo "Check zone for domain on RESELLER server: dns s servernumber domain.com";
+echo "Check zone for domain on BUSINESS server: dns b servernumber domain.com";
+echo "Check zone for domain on PREMIUM server: dns p servernumber domain.com";
+echo "Check zone for domain on RESELLER server: dns h servernumber domain.com";
 echo "=========================================================================";
 sleep 1; exec bash;
