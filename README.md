@@ -3,15 +3,15 @@ This script was initially created to save time on "digging" stuff and will help 
 
 ###INSTALLATION:
 1. Clone a repo from GitHub:
-```bash
+```shell
 git clone https://github.com/kate-grechishkina/tools-DNSes.git; cd tools-DNSes
 ```
 2. Execute the installation file:
-```bash
+```shell
 sh install.sh
 ```
 3. Navigate to your home directory and remove unnecessary file:
-```bash
+```shell
 cd ~; rm -rf tools-DNSes/
 ```
 4. Start using.
