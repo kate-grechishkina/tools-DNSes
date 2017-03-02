@@ -4,19 +4,29 @@
 This script was initially created to save time on "digging" stuff and will help you get a cPanel DNS zone from some our shared servers.
 
 ###INSTALLATION:
-1. Clone a repo from GitHub:
+1) Clone a repo from GitHub:
+- for old troll
 ```shell
 git clone https://github.com/kate-grechishkina/tools-DNSes.git; cd tools-DNSes
 ```
-2. Execute the installation file:
+- for new ncts01 server
+```shell
+wget https://github.com/kate-grechishkina/tools-DNSes/archive/master.zip; unzip master.zip; cd tools-DNSes-master
+```
+2) Execute the installation file:
 ```shell
 sh install.sh
 ```
-3. Navigate to your home directory and remove unnecessary file:
+3) Navigate to your home directory and remove unnecessary file:
+- for old troll
 ```shell
 cd ~; rm -rf tools-DNSes/
 ```
-4. Start using.
+- for new ncts01 server
+```shell
+cd ~; rm -rf master.zip tools-DNSes-master/
+```
+4) Start using.
 
 ###USAGE:
 Check the zone for domain on:
