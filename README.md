@@ -21,9 +21,9 @@ cd ~; rm -rf tools-DNSes/
 ###USAGE:
 Check the zone for domain on:
 - SHARED server: dns s servernum domain.com";
-- BUSINESS server: dns s servernum domain.com";
-- PREMIUM server: dns s servernum domain.com";
-- RESELLER server: dns s servernum domain.com";
+- BUSINESS server: dns b servernum domain.com";
+- PREMIUM server: dns p servernum domain.com";
+- RESELLER server: dns h servernum domain.com";
 
 ###SCRIPT STRUCTURE:
 - 1 main "switch" file called "dns" which purpose is to deternine what file will perform the actual "digging". It is located in your 'scripts' folder created in the home directory of your account. 
