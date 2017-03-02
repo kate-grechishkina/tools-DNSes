@@ -11,7 +11,7 @@ git clone https://github.com/kate-grechishkina/tools-DNSes.git; cd tools-DNSes
 ```
 - for new ncts01 server
 ```shell
-git clone https://github.com/kate-grechishkina/tools-DNSes.git; unzip master.zip; cd tools-DNSes
+wget https://github.com/kate-grechishkina/tools-DNSes/archive/master.zip; unzip master.zip; cd tools-DNSes-master
 ```
 2) Execute the installation file:
 ```shell
