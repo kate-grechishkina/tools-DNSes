@@ -20,6 +20,7 @@ chmod -R -v 755 ~/scripts;
 sleep 1; echo "Permissions changed."
 sleep 1; echo "Adding needed PATH variables to '.bashrc' file:"
 sleep 1; echo "In progress..."
+echo "" >> ~/.bashrc
 echo 'PATH="~/scripts/:${PATH}"' >> ~/.bashrc
 echo 'export PATH' >> ~/.bashrc
 sleep 1; echo "PATH variables added."
