@@ -31,4 +31,4 @@ echo "Check zone for domain on BUSINESS server: dns b servernumber domain.com";
 echo "Check zone for domain on PREMIUM server: dns p servernumber domain.com";
 echo "Check zone for domain on RESELLER server: dns h servernumber domain.com";
 echo "=========================================================================";
-sleep 1; exec bash;
+sleep 1; source ~/.bashrc;
