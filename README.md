@@ -26,7 +26,7 @@ cd ~; rm -rf tools-DNSes/
 ```shell
 cd ~; rm -rf master.zip tools-DNSes-master/
 ```
-4) Start using.
+4) Relogin to terminal server and start using it.
 
 ### USAGE:
 Check the zone for domain on:
