@@ -33,7 +33,7 @@ dig webdisk.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments 
 #dig TXT _carddav._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 #dig TXT _carddavs._tcp.${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 
-echo -e "${NEWLINE}${BLUE}This part is for email configuration, so you may not need to add it in case the clinet is not using cPanel email service.${NC}"
+echo -e "${NEWLINE}${BLUE}This part is for email configuration, so you may not need to add it in case the client is not using cPanel email service.${NC}"
 
 dig MX ${DOMAIN} @${SERVER} +answer +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
 dig mail.${DOMAIN} @${SERVER} +noauthority +noadditional +nocomments +nostats | grep -v ";" |  sed '/^$/d'
